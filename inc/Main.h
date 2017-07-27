@@ -29,7 +29,10 @@ class CMain
 
 		void Core(OPTION_S* pstOpt);
 	private:
+        void Inc(vector<CClassDetail *>& vecDetail, CClassDetail* pCRoot);
+        void Src(vector<CClassDetail *>& vecDetail, CClassDetail* pCRoot);
         void PrintDetail(vector<CClassDetail *>& vecDetail);
+        void PrintDetail(CClassDetail* pCDetail, const int& iLevel);
 };
 
 #endif

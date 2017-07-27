@@ -32,8 +32,8 @@ class CClassCont
 
         string SrcSet(const string& strClass, const string& strType, const string& strName);
         string SrcAdd(const string& strClass, const string& strType, const string& strName);
-        string SrcGet(const string& strClass, const string& strType, const string& strName, bool bConst = false);
-        string SrcStruct(const string& strClass);
+        string SrcGet(const string& strClass, const string& strType, const string& strName, const string& strVal, bool bConst = false);
+        string SrcStruct(const string& strClass, const string& strBase);
         string SrcCore(const string& strClass);
 
         string IncSet(const string& strType, const string& strName);
@@ -41,6 +41,8 @@ class CClassCont
         string IncGet(const string& strType, const string& strName);
         string IncGetConst(const string& strType, const string& strName);
         string IncCore();
+        string StrGetCommentStart();
+        string StrGetCommentEnd();
 	private:
         string Inc(const string& strRet, const string& strName, const string& strType, const string& strPara, bool bConst = false);
         string ToName(const string& strName);

@@ -297,7 +297,7 @@ string CClassCont::SrcAdd(const string& strClass, const string& strType, const s
     return strCont + strFunLine + strFun;
 }
 
-string CClassCont::SrcGet(const string& strClass, const string& strType, const string& strName, bool bConst)
+string CClassCont::SrcGet(const string& strClass, const string& strType, const string& strName, const string& strVal, bool bConst)
 {
     string strCont = \
         string("/*******************************************************************************\n") + \
@@ -306,23 +306,32 @@ string CClassCont::SrcGet(const string& strClass, const string& strType, const s
         string(" *******************************************************************************/\n")\
         ;
     string strFunLine = string("inline const ") + strType + string("& ") + strClass + string("::Get") + \
-        ToName(strName) + (bConst ? string("() const\n") : string("()\n"));
-        MergeSpace(strFunLine);
-    string strFun = string("{\n\treturn m_") + ToVar(strType, strName) + string(";\n}\n");
+        strName + (bConst ? string("() const\n") : string("()\n"));
+        //MergeSpace(strFunLine);
+    string strFun = string("{\n\treturn ") + strVal + string(";\n}\n");
     return strCont + strFunLine + strFun;
 }
 
-string CClassCont::SrcStruct(const string& strClass)
+string CClassCont::SrcStruct(const string& strClass, const string& strBase)
 {
     return \
         string("/*******************************************************************************\n") + \
         string(" * construction\n") + \
         string(" *******************************************************************************/\n") +\
-        strClass + string("::") + strClass + string("()\n{\n\n}\n\n") + \
+        (strBase.empty() ? string("") : (strBase + "::") ) + strClass + string("::") + strClass + string("()\n{\n\n}\n\n") + \
         string("/*******************************************************************************\n") + \
         string(" * deconstruction\n") + \
         string(" *******************************************************************************/\n") + \
-        strClass + string("::~") + strClass + string("()\n{\n\n}\n");
+        (strBase.empty() ? string("") : (strBase + "::") ) + strClass + string("::~") + strClass + string("()\n{\n\n}\n");
+}
+
+string CClassCont::StrGetCommentStart()
+{
+    return "/*******************************************************************************";
+}
+string CClassCont::StrGetCommentEnd()
+{
+    return " *******************************************************************************/";
 }
 
 string CClassCont::SrcCore(const string& strClass)

@@ -8,6 +8,7 @@
 #ifndef CLASSDETAIL_H_
 #define CLASSDETAIL_H_
 
+#include <map>
 #include <vector>
 #include <string>
 
@@ -46,12 +47,21 @@ class CClassDetail
         void SetType(const string& strType);     // s, m
         string GetType();
         vector<CClassMember *>& GetMember();
+        CClassDetail* GetChild(const string& strName);
+        vector<CClassDetail *> GetChildren();
+        void AddChild(const string& strName, CClassDetail* pCClass) {m_mapChildren[strName] = pCClass;};
 
         void Print();
+        vector<string> GenerateDeclare(const int& iLevel = 0);
+        vector<string> GenerateGet(const string& strBase = "");
+        vector<string> GenerateConstruct(const string& strBase = "");
+        vector<string> GenerateParse(const string& strBase = "");
 	private:
-        string                  m_strName;
-        string                  m_strType;
-        vector<CClassMember *>  m_vecMem;
+        string                     m_strName;
+        string                     m_strType;
+        vector<CClassMember *>     m_vecMem;
+        vector<CClassMember *>     m_vecAttr;
+        map<string, CClassDetail*> m_mapChildren;
 };
 
 #endif

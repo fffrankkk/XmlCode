@@ -40,9 +40,9 @@ OBJDIR_RELEASE = obj/Release
 DEP_RELEASE = 
 OUT_RELEASE = bin/Release/XmlCode
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)/src/XmlCode.o $(OBJDIR_DEBUG)/src/XMLTree.o $(OBJDIR_DEBUG)/src/XMLParser.o $(OBJDIR_DEBUG)/src/Utility.o $(OBJDIR_DEBUG)/src/Source.o $(OBJDIR_DEBUG)/src/Option.o $(OBJDIR_DEBUG)/src/Main.o $(OBJDIR_DEBUG)/src/Header.o $(OBJDIR_DEBUG)/src/Dir.o $(OBJDIR_DEBUG)/src/ClassPara.o $(OBJDIR_DEBUG)/src/ClassDetail.o $(OBJDIR_DEBUG)/src/ClassCont.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)/src/XmlCode.o $(OBJDIR_DEBUG)/src/XMLTree.o $(OBJDIR_DEBUG)/src/XMLParser.o $(OBJDIR_DEBUG)/src/Utility.o $(OBJDIR_DEBUG)/src/Option.o $(OBJDIR_DEBUG)/src/Main.o $(OBJDIR_DEBUG)/src/Dir.o $(OBJDIR_DEBUG)/src/ClassPara.o $(OBJDIR_DEBUG)/src/ClassDetail.o $(OBJDIR_DEBUG)/src/ClassCont.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)/src/XmlCode.o $(OBJDIR_RELEASE)/src/XMLTree.o $(OBJDIR_RELEASE)/src/XMLParser.o $(OBJDIR_RELEASE)/src/Utility.o $(OBJDIR_RELEASE)/src/Source.o $(OBJDIR_RELEASE)/src/Option.o $(OBJDIR_RELEASE)/src/Main.o $(OBJDIR_RELEASE)/src/Header.o $(OBJDIR_RELEASE)/src/Dir.o $(OBJDIR_RELEASE)/src/ClassPara.o $(OBJDIR_RELEASE)/src/ClassDetail.o $(OBJDIR_RELEASE)/src/ClassCont.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)/src/XmlCode.o $(OBJDIR_RELEASE)/src/XMLTree.o $(OBJDIR_RELEASE)/src/XMLParser.o $(OBJDIR_RELEASE)/src/Utility.o $(OBJDIR_RELEASE)/src/Option.o $(OBJDIR_RELEASE)/src/Main.o $(OBJDIR_RELEASE)/src/Dir.o $(OBJDIR_RELEASE)/src/ClassPara.o $(OBJDIR_RELEASE)/src/ClassDetail.o $(OBJDIR_RELEASE)/src/ClassCont.o
 
 all: debug release
 
@@ -71,17 +71,11 @@ $(OBJDIR_DEBUG)/src/XMLParser.o: src/XMLParser.cpp
 $(OBJDIR_DEBUG)/src/Utility.o: src/Utility.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Utility.cpp -o $(OBJDIR_DEBUG)/src/Utility.o
 
-$(OBJDIR_DEBUG)/src/Source.o: src/Source.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Source.cpp -o $(OBJDIR_DEBUG)/src/Source.o
-
 $(OBJDIR_DEBUG)/src/Option.o: src/Option.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Option.cpp -o $(OBJDIR_DEBUG)/src/Option.o
 
 $(OBJDIR_DEBUG)/src/Main.o: src/Main.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Main.cpp -o $(OBJDIR_DEBUG)/src/Main.o
-
-$(OBJDIR_DEBUG)/src/Header.o: src/Header.cpp
-	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Header.cpp -o $(OBJDIR_DEBUG)/src/Header.o
 
 $(OBJDIR_DEBUG)/src/Dir.o: src/Dir.cpp
 	$(CXX) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src/Dir.cpp -o $(OBJDIR_DEBUG)/src/Dir.o
@@ -123,17 +117,11 @@ $(OBJDIR_RELEASE)/src/XMLParser.o: src/XMLParser.cpp
 $(OBJDIR_RELEASE)/src/Utility.o: src/Utility.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Utility.cpp -o $(OBJDIR_RELEASE)/src/Utility.o
 
-$(OBJDIR_RELEASE)/src/Source.o: src/Source.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Source.cpp -o $(OBJDIR_RELEASE)/src/Source.o
-
 $(OBJDIR_RELEASE)/src/Option.o: src/Option.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Option.cpp -o $(OBJDIR_RELEASE)/src/Option.o
 
 $(OBJDIR_RELEASE)/src/Main.o: src/Main.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Main.cpp -o $(OBJDIR_RELEASE)/src/Main.o
-
-$(OBJDIR_RELEASE)/src/Header.o: src/Header.cpp
-	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Header.cpp -o $(OBJDIR_RELEASE)/src/Header.o
 
 $(OBJDIR_RELEASE)/src/Dir.o: src/Dir.cpp
 	$(CXX) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src/Dir.cpp -o $(OBJDIR_RELEASE)/src/Dir.o

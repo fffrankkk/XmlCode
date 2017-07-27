@@ -121,7 +121,7 @@ void CHeader::GetPara(vector<CClassPara>& vecPara, CClassPara& CCfgPara, vector<
             CLASS_S stCls = {{0}, {0}};
             strcpy(stCls.m_szName, pCDetail->GetName().c_str());
             for (unsigned int uiCount = 0; uiCount < vecCls.size(); ++uiCount) {
-                if (vecCls[uiCount]->GetType() == "c+") {
+			    if (vecCls[uiCount]->GetType() == "c+") {
                     sprintf(stCls.m_szMember + strlen(stCls.m_szMember), "vector<string> %s\n", vecCls[uiCount]->GetName().c_str());
                 } else {
                     sprintf(stCls.m_szMember + strlen(stCls.m_szMember), "string %s\n", vecCls[uiCount]->GetName().c_str());

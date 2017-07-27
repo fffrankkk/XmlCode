@@ -18,7 +18,7 @@ using namespace std;
 struct CLASS_S
 {
     char m_szName[PATH_LEN];
-    char m_szMember[PATH_LEN];
+    char m_szMember[PATH_LEN * 10];
 };
 
 class CClassPara

@@ -24,6 +24,8 @@ class CXMLNode
 		std::map<std::string, std::string> GetAttribute(){return m_mapAttribute;};
 		std::vector<CXMLNode *> GetChildren(){return m_vecChildren;};
 		std::vector<CXMLNode *> GetChildren(const std::string& strName);
+		bool HasAttribute() {return !m_mapAttribute.empty();};
+		bool HasChildren() {return !m_vecChildren.empty();};
 
 		void SetName(const std::string& strName);
 		void SetValue(const std::string& strValue);

@@ -24,6 +24,7 @@ class CXMLParser
 		virtual ~CXMLParser();
 
         vector<CClassDetail *> Parse(const char* pszFile);
+        CClassDetail* ParseRoot(const char* pszFile);
 	private:
         void ParseNode(CXMLNode* pCNode, CClassDetail* pCDetail);
         void ParseAttribute(CXMLNode* pCNode, CClassDetail* pCDetail);
